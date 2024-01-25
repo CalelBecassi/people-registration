@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "TtJ6Zd7jcjvFRPegzIcD76UOAB+kkMFz9WPCXbbvM1aecZLAXCB5DETNYPiLvL4syKFRfxmdthZPsbzyq1eppA==",
+  "success": true,
+  "projectFilePath": "D:\\Downloads\\ProjetoLarTech\\PeopleRegistration\\PeopleRegistration.API\\PeopleRegistration.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Calel\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Calel\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Calel\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\Calel\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\Calel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\Calel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

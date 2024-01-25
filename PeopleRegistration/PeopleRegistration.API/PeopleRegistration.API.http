@@ -1,0 +1,6 @@
+@PeopleRegistration.API_HostAddress = http://localhost:5223
+
+GET {{PeopleRegistration.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
