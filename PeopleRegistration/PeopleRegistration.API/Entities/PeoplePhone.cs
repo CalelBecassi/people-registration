@@ -7,5 +7,7 @@
         public string Type { get; set; }
 
         public string Number { get; set; }
+
+        public Guid PeopleId { get; set; }
     }
 }

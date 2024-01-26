@@ -5,7 +5,7 @@
         public People()
         {
             Phones = new List<PeoplePhone> { };
-            EstaAtivo = false;
+            EstaAtivo = true;
         }
         
         public Guid Id { get; set; }
@@ -30,7 +30,7 @@
 
         public void Delete()
         {
-            EstaAtivo = true;
+            EstaAtivo = false;
         }
     }
 }

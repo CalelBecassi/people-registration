@@ -2,6 +2,7 @@
 using PeopleRegistration.API.Persistence;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace PeopleRegistration.API.Controllers
 {
@@ -19,7 +20,10 @@ namespace PeopleRegistration.API.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var peoples = _context.Peoples.Where(d => !d.EstaAtivo).ToList();
+            var peoples = _context.Peoples
+                .Include(p => p.Phones)
+                .Where(p => p.EstaAtivo)
+                .ToList();
 
             return Ok(peoples);
         }
@@ -27,7 +31,9 @@ namespace PeopleRegistration.API.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
         {
-            var people = _context.Peoples.SingleOrDefault(d => d.Id == id);
+            var people = _context.Peoples
+                .Include(p => p.Phones)
+                .SingleOrDefault(p => p.Id == id);
 
             if (people == null)
             {
@@ -41,6 +47,7 @@ namespace PeopleRegistration.API.Controllers
         public IActionResult Post(People people)
         {
             _context.Peoples.Add(people);
+            _context.SaveChanges();
 
             return CreatedAtAction(nameof(GetById), new { id = people.Id }, people);
         }
@@ -48,7 +55,7 @@ namespace PeopleRegistration.API.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(Guid id, People input)
         {
-            var people = _context.Peoples.SingleOrDefault(d => d.Id == id);
+            var people = _context.Peoples.SingleOrDefault(p => p.Id == id);
 
             if (people == null)
             {
@@ -57,13 +64,16 @@ namespace PeopleRegistration.API.Controllers
 
             people.Update(input.Name, input.Cpf, input.Nascimento, input.EstaAtivo);
 
+            _context.Peoples.Update(people);
+            _context.SaveChanges();
+
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
-            var people = _context.Peoples.SingleOrDefault(d => d.Id == id);
+            var people = _context.Peoples.SingleOrDefault(p => p.Id == id);
 
             if (people == null)
             {
@@ -72,20 +82,24 @@ namespace PeopleRegistration.API.Controllers
 
             people.Delete();
 
+            _context.SaveChanges();
+
             return NoContent();
         }
 
         [HttpPost("{id}/phones")]
         public IActionResult PostPhone(Guid id, PeoplePhone phone)
         {
-            var people = _context.Peoples.SingleOrDefault(d => d.Id == id);
+            phone.PeopleId = id;
+            var people = _context.Peoples.Any(p => p.Id == id);
 
-            if (people == null)
+            if (!people)
             {
                 return NotFound();
             }
 
-            people.Phones.Add(phone);
+            _context.PeoplePhones.Add(phone);
+            _context.SaveChanges();
 
             return NoContent();
         }

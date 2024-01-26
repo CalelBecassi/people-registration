@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Downloads\\ProjetoLarTech\\PeopleRegistration\\PeopleRegistration.API\\PeopleRegistration.API.csproj": {}
+    "C:\\Users\\Calel\\source\\repos\\people-registration\\PeopleRegistration\\PeopleRegistration.API\\PeopleRegistration.API.csproj": {}
   },
   "projects": {
-    "D:\\Downloads\\ProjetoLarTech\\PeopleRegistration\\PeopleRegistration.API\\PeopleRegistration.API.csproj": {
+    "C:\\Users\\Calel\\source\\repos\\people-registration\\PeopleRegistration\\PeopleRegistration.API\\PeopleRegistration.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\ProjetoLarTech\\PeopleRegistration\\PeopleRegistration.API\\PeopleRegistration.API.csproj",
+        "projectUniqueName": "C:\\Users\\Calel\\source\\repos\\people-registration\\PeopleRegistration\\PeopleRegistration.API\\PeopleRegistration.API.csproj",
         "projectName": "PeopleRegistration.API",
-        "projectPath": "D:\\Downloads\\ProjetoLarTech\\PeopleRegistration\\PeopleRegistration.API\\PeopleRegistration.API.csproj",
+        "projectPath": "C:\\Users\\Calel\\source\\repos\\people-registration\\PeopleRegistration\\PeopleRegistration.API\\PeopleRegistration.API.csproj",
         "packagesPath": "C:\\Users\\Calel\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\ProjetoLarTech\\PeopleRegistration\\PeopleRegistration.API\\obj\\",
+        "outputPath": "C:\\Users\\Calel\\source\\repos\\people-registration\\PeopleRegistration\\PeopleRegistration.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Calel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,9 +39,33 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
